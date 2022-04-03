@@ -167,11 +167,17 @@ Use the getReviewsByRating function below to do the following:
   ]
 */
 
- function getReviewByRating(array, rating) {
-   for(let i=0; i < array.length, i++){
-     if()
+function getReviewByRating(array, ratingWanted) {
+  const newArray =[] 
+  for(let i=0; i < array.length; i++){
+    if(Math.floor(ratingWanted) === Math.floor(array[i].rating)){
+			 newArray.push(array[i])
+			 }
    }
+	 return newArray
   }
+
+  console.log('Review by Rating:', getReviewByRating(reviews, 4))
 
   
 /* 💪💪💪💪💪💪💪💪💪💪 STRETCH 2: 💪💪💪💪💪💪💪💪💪💪   
@@ -187,8 +193,17 @@ Use the getLongReviews function below to do the following:
   ]
 */
 
-function getLongReviews() {
-  }
+function getLongReviews(array) {
+	const reviews15orMoreWords = [];
+	for (let i = 0; i < array.length; i++) {
+		if (array[i].feedback.split(" ").length >= 15) {
+			reviews15orMoreWords.push(array[i]);
+		}
+	}
+	return reviews15orMoreWords;
+}
+
+console.log('Long Reviews:', getLongReviews(reviews));
   
 
 /* 💪💪💪💪💪💪💪💪💪💪 STRETCH 3: 💪💪💪💪💪💪💪💪💪💪 
@@ -208,9 +223,18 @@ Use the carMaker function below to do the following:
   It would return 110 because it was created with 10 as the odometer and we added 100 to it with the drive method 
 */
 
-
-function carMaker() {
+function carMaker(odometerCurrent) {
+  let odometer = {odometer: odometerCurrent,
+                  drive: function(distance){
+										return odometerCurrent + distance
+									}
+								 }
+  return odometer
 }
+
+let car = 10
+
+console.log(carMaker(car).drive(100))
 
 
 /* 🛑🛑🛑🛑🛑 Please do not modify anything below this line 🛑🛑🛑🛑🛑 */
