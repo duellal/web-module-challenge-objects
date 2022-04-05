@@ -3,8 +3,8 @@
 /*When doing these tasks, we recommend using console.log to test the output of your code to make sure it works correctly.*/
 
 ///////////////Menu Items (MVP)///////////////////
-const latte = {name: "Cafe Latte", price: 4, category: "Drinks"};
-const breakfastBurrito = {name: "Breakfast Burrito", price: 16, category:"Breakfast"};
+const latte = { name: "Cafe Latte", price: 4, category: "Drinks" };
+const breakfastBurrito = { name: "Breakfast Burrito", price: 16, category: "Breakfast" };
 
 /* 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 Task 1a: Make a function that builds objects🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀
 Add to the function createMenuItems below so it will create objects following the same format found above for latte and breakfastBurrito (name, price, category).  
@@ -16,8 +16,8 @@ The function should:
 */
 
 
-function createMenuItem(inName, inPrice, inCategory){
-  return {name: inName, price: inPrice, category: inCategory}
+function createMenuItem(inName, inPrice, inCategory) {
+  return { name: inName, price: inPrice, category: inCategory }
 }
 
 
@@ -50,15 +50,15 @@ Using the burger object below do the following:
 
 
 const burger = {
-  name: "Burger", 
-  price: 18, 
-  category: "Lunch", 
+  name: "Burger",
+  price: 18,
+  category: "Lunch",
   //creating a method (function inside object - first example in notes)
-  discount: function(string){
-    if(string==='teacher' || string==='student'){
-      return burger.price*.75
-    }else{
-      return burger.price*.90
+  discount: function (string) {
+    if (string === 'teacher' || string === 'student') {
+      return burger.price * .75
+    } else {
+      return burger.price * .90
     }
   }
 }
@@ -69,14 +69,14 @@ console.log(burger.discount('public'))
 
 ///////////////Reviews (MVP)///////////////////
 const reviews = [
-    {name: "Daniela", rating: 5, feedback:"Beautiful atmosphere and wonderful vegan options!"},
-    {name: "Jack", rating: 3, feedback:"A little too hipster for my taste, but the burger was decent, if overpriced"},
-    {name: "Miranda", rating: 4, feedback:"fun trivia and cool vibes"},
-    {name: "Wen", rating: 4.5, feedback:"I don't leave my house often, but when I do, it's for this place. Highly reccomend."},
-    {name: "Brett", rating: 3, feedback: "great selection of snacks and a nice cafe area to get work done during the day."},
-    {name: "Julius", rating: 2, feedback: "I was largely unimpressed by this venue. Nothing special on the menu and too expensive. The atmosphere is polarizing, and not for me, but I think some would like it." },
-    {name: "Lauren", rating: 4, feedback: "Absolutely love that they have karaoke Fridays! Food and drink selection is okay."},
-    {name: "Reyna", rating: 3.5, feedback: ""},
+  { name: "Daniela", rating: 5, feedback: "Beautiful atmosphere and wonderful vegan options!" },
+  { name: "Jack", rating: 3, feedback: "A little too hipster for my taste, but the burger was decent, if overpriced" },
+  { name: "Miranda", rating: 4, feedback: "fun trivia and cool vibes" },
+  { name: "Wen", rating: 4.5, feedback: "I don't leave my house often, but when I do, it's for this place. Highly reccomend." },
+  { name: "Brett", rating: 3, feedback: "great selection of snacks and a nice cafe area to get work done during the day." },
+  { name: "Julius", rating: 2, feedback: "I was largely unimpressed by this venue. Nothing special on the menu and too expensive. The atmosphere is polarizing, and not for me, but I think some would like it." },
+  { name: "Lauren", rating: 4, feedback: "Absolutely love that they have karaoke Fridays! Food and drink selection is okay." },
+  { name: "Reyna", rating: 3.5, feedback: "" },
 ]
 
 /* 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 Task 3 (not auto-tested): 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 
@@ -107,9 +107,9 @@ Write a function that creates an object with name, rating, feedback, add the new
 */
 
 
-function addReview(array, name, rating, feedback){
-  array.push({name: name, rating: rating, feedback: feedback})
-	return array
+function addReview(array, name, rating, feedback) {
+  array.push({ name: name, rating: rating, feedback: feedback })
+  return array
 }
 
 console.log(addReview(reviews, 'Daniela', 5, 'Beautiful atmosphere and wonderful vegan options!'))
@@ -146,8 +146,8 @@ Use the getLastReview function below to do the following:
 
 
 function getLastReview(array) {
-  return `${array[array.length -1].name} gave the restaurant a ${array[array.length -1].rating} star review, and their feedback was: ${array[array.length-1].feedback}`
-} 
+  return `${array[array.length - 1].name} gave the restaurant a ${array[array.length - 1].rating} star review, and their feedback was: ${array[array.length - 1].feedback}`
+}
 console.log()
 console.log(getLastReview(reviews))
 
@@ -168,18 +168,18 @@ Use the getReviewsByRating function below to do the following:
 */
 
 function getReviewByRating(array, ratingWanted) {
-  const newArray =[] 
-  for(let i=0; i < array.length; i++){
-    if(Math.floor(ratingWanted) === Math.floor(array[i].rating)){
-			 newArray.push(array[i])
-			 }
-   }
-	 return newArray
+  const newArray = []
+  for (let i = 0; i < array.length; i++) {
+    if (Math.floor(ratingWanted) === Math.floor(array[i].rating)) {
+      newArray.push(array[i])
+    }
   }
+  return newArray
+}
 
-  console.log('Review by Rating:', getReviewByRating(reviews, 4))
+console.log('Review by Rating:', getReviewByRating(reviews, 4))
 
-  
+
 /* 💪💪💪💪💪💪💪💪💪💪 STRETCH 2: 💪💪💪💪💪💪💪💪💪💪   
 Use the getLongReviews function below to do the following:
   1. Receive the array that holds all the reviews
@@ -194,17 +194,17 @@ Use the getLongReviews function below to do the following:
 */
 
 function getLongReviews(array) {
-	const reviews15orMoreWords = [];
-	for (let i = 0; i < array.length; i++) {
-		if (array[i].feedback.split(" ").length >= 15) {
-			reviews15orMoreWords.push(array[i]);
-		}
-	}
-	return reviews15orMoreWords;
+  const reviews15orMoreWords = [];
+  for (let i = 0; i < array.length; i++) {
+    if (array[i].feedback.split(" ").length >= 15) {
+      reviews15orMoreWords.push(array[i]);
+    }
+  }
+  return reviews15orMoreWords;
 }
 
 console.log('Long Reviews:', getLongReviews(reviews));
-  
+
 
 /* 💪💪💪💪💪💪💪💪💪💪 STRETCH 3: 💪💪💪💪💪💪💪💪💪💪 
 This stretch goal does not use the reviews data!  You create your own object in this stretch goal.
@@ -224,11 +224,12 @@ Use the carMaker function below to do the following:
 */
 
 function carMaker(odometerCurrent) {
-  let odometer = {odometer: odometerCurrent,
-                  drive: function(distance){
-										return odometerCurrent + distance
-									}
-								 }
+  let odometer = {
+    odometer: odometerCurrent,
+    drive: function (distance) {
+      return odometerCurrent + distance
+    }
+  }
   return odometer
 }
 
@@ -238,7 +239,7 @@ console.log(carMaker(car).drive(100))
 
 
 /* 🛑🛑🛑🛑🛑 Please do not modify anything below this line 🛑🛑🛑🛑🛑 */
-function foo(){
+function foo() {
   console.log('its working');
   return 'bar';
 }
