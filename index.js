@@ -230,13 +230,13 @@ Use the carMaker function below to do the following:
 */
 
 function carMaker(odometerCurrent) {
-	let carOdometer = {
-		odometer: odometerCurrent,
-		drive: function (distance) {
-			return (car = odometerCurrent + distance);
-		}
-	};
-	return carOdometer;
+  let carOdometer = {
+    odometer: odometerCurrent,
+    drive: function (distance) {
+      return (car = odometerCurrent + distance);
+    }
+  };
+  return carOdometer;
 }
 
 let car = 10;
