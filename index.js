@@ -200,12 +200,12 @@ function getLongReviews(array) {
       reviews15orMoreWords.push(array[i]);
     }
   }
-  array.forEach(feedback => {
-    console.log(typeof feedback);
-    if (feedback.split(" ").length >= 15) {
-      reviews15orMoreWords.push(feedback);
-    }
-  })
+  // array.forEach(feedback => {
+  //   console.log(typeof feedback);
+  //   if (feedback.split(" ").length >= 15) {
+  //     reviews15orMoreWords.push(feedback);
+  //   }
+  // })
   return reviews15orMoreWords;
 }
 
