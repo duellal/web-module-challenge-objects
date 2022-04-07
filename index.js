@@ -195,17 +195,17 @@ Use the getLongReviews function below to do the following:
 
 function getLongReviews(array) {
   const reviews15orMoreWords = [];
-  // for (let i = 0; i < array.length; i++) {
-  //   if (array[i].feedback.split(" ").length >= 15) {
-  //     reviews15orMoreWords.push(array[i]);
-  //   }
-  // }
-  // array.forEach(feedback => {
-  //   console.log(typeof feedback);
-  //   if (feedback.split(" ").length >= 15){
-  //     reviews15orMoreWords.push(feedback);
-  //   }
-  // })
+  for (let i = 0; i < array.length; i++) {
+    if (array[i].feedback.split(" ").length >= 15) {
+      reviews15orMoreWords.push(array[i]);
+    }
+  }
+  array.forEach(feedback => {
+    console.log(typeof feedback);
+    if (feedback.split(" ").length >= 15) {
+      reviews15orMoreWords.push(feedback);
+    }
+  })
   return reviews15orMoreWords;
 }
 
