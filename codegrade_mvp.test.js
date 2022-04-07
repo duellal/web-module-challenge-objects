@@ -99,3 +99,10 @@ describe('getLastReview', ()=>{
     })
 });
 
+describe('carMarker', ()=>{
+    it.only('runs carMaker', ()=>{
+        let car = functions.carMaker(10);
+        console.log(car.drive(100))
+        console.log(car.odometer);
+    })
+}

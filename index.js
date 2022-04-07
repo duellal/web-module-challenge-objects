@@ -195,11 +195,17 @@ Use the getLongReviews function below to do the following:
 
 function getLongReviews(array) {
   const reviews15orMoreWords = [];
-  for (let i = 0; i < array.length; i++) {
-    if (array[i].feedback.split(" ").length >= 15) {
-      reviews15orMoreWords.push(array[i]);
-    }
-  }
+  // for (let i = 0; i < array.length; i++) {
+  //   if (array[i].feedback.split(" ").length >= 15) {
+  //     reviews15orMoreWords.push(array[i]);
+  //   }
+  // }
+  // array.forEach(feedback => {
+  //   console.log(typeof feedback);
+  //   if (feedback.split(" ").length >= 15){
+  //     reviews15orMoreWords.push(feedback);
+  //   }
+  // })
   return reviews15orMoreWords;
 }
 
@@ -224,18 +230,20 @@ Use the carMaker function below to do the following:
 */
 
 function carMaker(odometerCurrent) {
-  let odometer = {
-    odometer: odometerCurrent,
-    drive: function (distance) {
-      return odometerCurrent + distance
-    }
-  }
-  return odometer
+	let carOdometer = {
+		odometer: odometerCurrent,
+		drive: function (distance) {
+			return (car = odometerCurrent + distance);
+		}
+	};
+	return carOdometer;
 }
 
-let car = 10
+let car = 10;
+
 
 console.log(carMaker(car).drive(100))
+console.log(car);
 
 
 /* 🛑🛑🛑🛑🛑 Please do not modify anything below this line 🛑🛑🛑🛑🛑 */
@@ -250,4 +258,5 @@ module.exports = {
   addReview,
   getReviewByIndex,
   getLastReview,
+  carMaker
 }
